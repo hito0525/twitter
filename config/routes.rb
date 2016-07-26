@@ -5,6 +5,9 @@ collection do
 end
 end
 
+root 'tweets#index'
+
+
 # get 'tweets' => 'tweets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

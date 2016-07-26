@@ -45,3 +45,16 @@ group :development do
   gem 'spring'
 end
 
+#デプロイ用gem
+gem 'rails_12factor', group: :production
+
+#bootstrap用のgem
+gem 'twitter-bootstrap-rails'
+gem 'therubyracer'
+gem 'therubyrhino'
+
+
+
+
+
+

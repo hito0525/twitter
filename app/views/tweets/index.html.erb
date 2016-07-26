@@ -1,6 +1,69 @@
-<p><%= notice %></p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Twitter Model", root_path, class: "navbar-brand" %>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "ツイートする", new_tweet_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "ツイート", tweets_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-<h1>Tweet一覧</h1>
+
+
+
+
+
+    <p><%= notice %></p>
+    <h1>ツイート一覧</h1>
+      <%= link_to "ツイートする", new_tweet_path, class: 'btn btn-default' %>
+    <br>
+    <% @tweets.each do |tweet| %>
+    <div class="row">
+      <h4><strong><%= simple_format(tweet.content) %></strong></h4>
+
+
+      <%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-default btn-sm btn-success' %>
+
+      <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    </div>
+    <% end %>
+
+
+<footer>
+
+    <p>© 2016-designed by Takahito.P.Iwase.</p>
+  </footer>
+
+
+
+
+<!-- <p><%= notice %></p>
+
+<header>
+    <ul>
+      <li><a href="#">ホーム</a></li>
+      <li><a href="#">通知</a></li>
+      <li><a href="#">メッセージ</a></li>
+      <li><a href="#">ツイート</a></li>
+    </ul>
+  </header>
 
 <% @tweets.each do |tweet| %>
   <p>本文:<%= simple_format(tweet.content) %></p>
@@ -13,3 +76,10 @@
 <br>
 <br>
 <%= link_to "ツイートする", new_tweet_path %>
+
+
+<footer>
+
+    <p>© 2016-designed by Takahito.P.Iwase.</p>
+  </footer>
+ -->
