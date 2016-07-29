@@ -29,7 +29,8 @@
 </nav>
 
 
-
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
 
 
     <p><%= notice %></p>
@@ -46,6 +47,8 @@
       <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
     </div>
     <% end %>
+</div>
+</div>
 
 
 <!-- <footer>
